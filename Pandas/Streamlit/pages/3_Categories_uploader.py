@@ -1,9 +1,7 @@
 import streamlit as st
 import pandas as pd 
-import numpy as np
 from st_aggrid import AgGrid
 from st_aggrid.grid_options_builder import GridOptionsBuilder
-import os
 
 st.title("Categries uploader")
 
@@ -20,17 +18,15 @@ cat_list = pd.read_csv(cat_list_path)
 cat_list = cat_list['cat_name']
 cat_list = cat_list.dropna(how="all")
 
-tran_list = catn['Transaction Description']
+tran_list = catn["Transaction Description"]
 tran_list = tran_list.drop_duplicates()
-tran_list = tran_list.sort_values(axis=['Transaction Description'])
+tran_list.sort_values(inplace=True)
 
-st.subheader("Uncated transaction")
-
+st.subheader("Waiting list")
+st.empty()
 gd = GridOptionsBuilder.from_dataframe(catn)
 gd.configure_pagination(enabled = True)
 gd.configure_default_column(editable = True, groupable = True)
-
-AgGrid(catn,width=7000)
 
 st.sidebar.header("Please update new categories")
 
@@ -40,13 +36,14 @@ Transaction = input_form.selectbox("Transaction Description",tran_list)
 categories = input_form.selectbox("Categories",cat_list)
 add_data = input_form.form_submit_button()
 
-##add_data not yet done 
+# add_data not yet done 
 
+st.cache(allow_output_mutation= True)
+    
 if add_data:
-    new_data = {"Transaction Description": Transaction, "Categories": categories}
-    catn.loc[str(Transaction), "Categories"]= str(categories)
-    catn.to_excel(catopath,index="false")
+    Transaction = str(Transaction)
+    categories = str(categories)
+    catn.loc[catn[ "Transaction Description"] == Transaction,"Categories"] = categories
+    catn.to_excel(catnpath,index=False)
 
-# st.write(cat_list)
-
-
+AgGrid(catn,width=7000)
