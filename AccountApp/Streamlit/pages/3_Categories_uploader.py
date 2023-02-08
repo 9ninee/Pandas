@@ -6,12 +6,12 @@ from st_aggrid.grid_options_builder import GridOptionsBuilder
 st.title("Categries uploader")
 
 ## --- path ---
-catnpath = '/Users/nigel/Library/Mobile Documents/com~apple~CloudDocs/Programme/Temp/Excel/DiscriptionCategories.xlsx'
-catopath = '/Users/nigel/Library/Mobile Documents/com~apple~CloudDocs/Programme/Temp/Record/DiscriptionCategories.xlsx'
-cat_list_path = "/Users/nigel/Library/Mobile Documents/com~apple~CloudDocs/Programme/Temp/Excel/Indcat.csv"
+catnpath = 'pages/Temp/Excel/DiscriptionCategories.csv'
+catopath = 'pages/Temp/Record/DiscriptionCategories.csv'
+cat_list_path = "pages/Temp/Excel/Indcat.csv"
 
-catn = pd.read_excel(catnpath)
-cato = pd.read_excel(catopath)
+catn = pd.read_csv(catnpath,parse_dates=['Transaction Date'],dayfirst=True)
+cato = pd.read_csv(catopath)
 cato.sort_index(ascending=False)
 
 cat_list = pd.read_csv(cat_list_path)
@@ -32,7 +32,7 @@ st.sidebar.header("Please update new categories")
 
 input_form = st.sidebar.form("Input_Form")
     
-Transaction = input_form.selectbox("Transaction Description",tran_list)
+Transaction = input_form.multiselect("Transaction Description",tran_list)
 categories = input_form.selectbox("Categories",cat_list)
 add_data = input_form.form_submit_button()
 
@@ -41,9 +41,10 @@ add_data = input_form.form_submit_button()
 st.cache(allow_output_mutation= True)
     
 if add_data:
-    Transaction = str(Transaction)
-    categories = str(categories)
-    catn.loc[catn[ "Transaction Description"] == Transaction,"Categories"] = categories
-    catn.to_excel(catnpath,index=False)
+    for f in Transaction:
+        Tran = f
+        categories = str(categories)
+        catn.loc[catn[ "Transaction Description"] == Tran,"Categories"] = categories
+        catn.to_csv(catnpath,index=False)
 
 AgGrid(catn,width=7000)
