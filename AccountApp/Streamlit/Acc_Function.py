@@ -1,5 +1,8 @@
 import pandas as pd
+import numpy as np
 import os
+from datetime import date
+
 
 class bank():
 
@@ -19,46 +22,51 @@ class bank():
         pass
 
 class func():
-    # Required input: Newfile, Filelocation 
-    
 
-    def catconcat(): #done
-        cato = 'pages/Temp/Record/DiscriptionCategories.csv'
-        cato = pd.read_csv(cato)
-        catn = "pages/Temp/Excel/DiscriptionCategories.xlsx"
-        catn = pd.read_excel(catn)
-        catn= catn.drop(columns=['Debit Amount','Credit Amount'])
-        catn = catn.dropna(how="any")
+    def cat(df,cato):
+        df = df.drop(columns=['Transaction Date','Debit Amount','Credit Amount'])
+
+        return df
+
+    # Required input: Newfile, Filelocation 
+
+    def catmerge(catn, cato):
+        catn= catn.drop(columns=['Transaction Date','Debit Amount','Credit Amount'])
         cat = pd.concat([catn,cato], ignore_index=True)
         return cat
 
-    def dfmerge(df,cat): #done
+    def dfmerge(df,cat):
 
+        dfn = df
+        catn= cato = cat
+
+        # merge cat table with df 
         MergeTable = pd.merge(df,
                         cat,
                         on = 'Transaction Description',
                         how = 'left',
                         suffixes = ('','_DROP')).filter(regex='^(?!.*_DROP)')
-
         MergeTable.drop_duplicates(ignore_index=True, inplace=True)
+
         catn = MergeTable[MergeTable['Categories'].isna()]
         catn = catn.drop_duplicates(ignore_index=True)
         catn = catn.loc[:, ~catn.columns.str.contains('^Unnamed')]
+        # catn.to_excel(catnpath,index=False)
+
         MergeTable = MergeTable.loc[:, ~MergeTable.columns.str.contains('^Unnamed')]
-        
-        return catn,cat,MergeTable
 
-    def Backup(file_path): #done
-        file_name = os.path.basename(file_path)
-        backup_path = 'pages/Temp/Record/Backup/'+str(file_name)
-        os.rename(file_path,backup_path)
-        return None
+        # MergeTable.to_csv(dfopath, index=False)
 
-    def load_data():
-        pass
+        return dfn,catn,cato
 
-    # def read_dfo(self):
-    #     return dfo
+    def Backup(df,path):
+
+        backup_path = 'pages/Temp/Record/Backup/'+str(date.today())+'.csv'
+        df = pd.DataFrame 
+        # move and rename dfn to backup file 
+        # os.rename(dfnpath,backup_path)
+        df.to_csv(backup_path,index=False)
+
 
 
 # dfn = df = pd.read_csv(dfn,encoding='latin1',index_col=[0])

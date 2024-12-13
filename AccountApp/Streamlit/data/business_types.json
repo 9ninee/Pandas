@@ -1,0 +1,110 @@
+{
+    "GROCERIES": {
+        "category": "4.1.Groceries",
+        "keywords": [
+            "TESCO", "ALDI", "LIDL", "SAINSBURY", "ASDA", "MORRISONS", 
+            "WAITROSE", "M&S", "MARKS & SPENCER", "CO-OP", "COOP",
+            "GROCERY", "SUPERMARKET", "FOOD", "EXPRESS", "LOCAL",
+            "CORNER SHOP", "CONVENIENCE", "STORE", "MARKET"
+        ],
+        "chains": [
+            "TESCO", "ALDI", "LIDL", "SAINSBURY", "ASDA", "MORRISONS",
+            "WAITROSE", "M&S SIMPLY FOOD", "CO-OP FOOD", "ICELAND"
+        ]
+    },
+    "RESTAURANTS": {
+        "category": "4.2.Restaurants",
+        "keywords": [
+            "RESTAURANT", "CAFE", "COFFEE", "DINING", "FOOD", "EAT",
+            "KITCHEN", "BURGER", "PIZZA", "SUBWAY", "MCDONALDS",
+            "KFC", "COSTA", "STARBUCKS", "PRET", "GREGGS",
+            "NANDOS", "WAGAMAMA", "TAKEAWAY", "DELIVEROO", "UBER EATS",
+            "PUB", "BAR", "WETHERSPOON", "SUSHI", "BISTRO"
+        ],
+        "chains": [
+            "MCDONALDS", "KFC", "COSTA COFFEE", "STARBUCKS",
+            "PRET A MANGER", "GREGGS", "NANDOS", "WAGAMAMA",
+            "PIZZA HUT", "DOMINOS", "SUBWAY", "FIVE GUYS",
+            "WETHERSPOON", "BURGER KING"
+        ]
+    },
+    "TRANSPORT": {
+        "category": "4.3.Transport",
+        "keywords": [
+            "TRANSPORT", "UBER", "TAXI", "TRAIN", "BUS", "RAIL",
+            "TFL", "OYSTER", "NATIONAL RAIL", "TRAINLINE", "TICKET",
+            "PARKING", "STATION", "TRAVEL", "TRANSPORT FOR LONDON",
+            "FLIGHT", "AIRLINE", "CAR HIRE", "RENTAL"
+        ],
+        "chains": [
+            "UBER", "TFL", "NATIONAL RAIL", "TRAINLINE", "OYSTER",
+            "BRITISH AIRWAYS", "EASYJET", "RYANAIR", "AVIS", "HERTZ"
+        ]
+    },
+    "SHOPPING": {
+        "category": "4.4.Shopping",
+        "keywords": [
+            "SHOP", "STORE", "RETAIL", "MALL", "OUTLET", "MARKET",
+            "AMAZON", "EBAY", "ARGOS", "BOOTS", "SUPERDRUG",
+            "CLOTHING", "FASHION", "WEAR", "SHOES", "SPORTS",
+            "ELECTRONICS", "MOBILE", "PHONE", "COMPUTER"
+        ],
+        "chains": [
+            "AMAZON", "EBAY", "ARGOS", "BOOTS", "SUPERDRUG",
+            "PRIMARK", "H&M", "ZARA", "NEXT", "SPORTS DIRECT",
+            "CURRYS", "APPLE", "SAMSUNG", "JOHN LEWIS"
+        ]
+    },
+    "ENTERTAINMENT": {
+        "category": "4.5.Entertainment",
+        "keywords": [
+            "CINEMA", "MOVIE", "THEATRE", "CONCERT", "SHOW",
+            "TICKET", "EVENT", "GAME", "GAMING", "SPOTIFY",
+            "NETFLIX", "AMAZON PRIME", "DISNEY", "GYM", "FITNESS",
+            "SPORT", "CLUB", "ENTERTAINMENT"
+        ],
+        "chains": [
+            "NETFLIX", "SPOTIFY", "AMAZON PRIME", "DISNEY+",
+            "VUE CINEMA", "ODEON", "CINEWORLD", "PURE GYM",
+            "FITNESS FIRST", "VIRGIN ACTIVE"
+        ]
+    },
+    "UTILITIES": {
+        "category": "4.6.Utilities",
+        "keywords": [
+            "UTILITY", "ELECTRIC", "GAS", "WATER", "ENERGY",
+            "POWER", "INTERNET", "BROADBAND", "PHONE", "MOBILE",
+            "BILL", "SERVICE", "COUNCIL TAX", "RENT", "MORTGAGE"
+        ],
+        "chains": [
+            "BRITISH GAS", "EDF", "EON", "SSE", "SCOTTISH POWER",
+            "VIRGIN MEDIA", "SKY", "BT", "EE", "VODAFONE",
+            "O2", "THREE"
+        ]
+    },
+    "MORTGAGES": {
+        "category": "2.1.Mortgages / Rent",
+        "keywords": [
+            "MORTGAGE", "RENT", "HOUSING", "PROPERTY", "LOAN",
+            "PAYMENT", "LANDLORD", "ESTATE", "AGENT", "LETTING",
+            "DEPOSIT", "ACCOMMODATION"
+        ],
+        "chains": [
+            "RIGHTMOVE", "ZOOPLA", "PURPLEBRICKS",
+            "FOXTONS", "SAVILLS", "COUNTRYWIDE"
+        ]
+    },
+    "INSURANCE": {
+        "category": "2.2.Insurance",
+        "keywords": [
+            "INSURANCE", "INSURE", "POLICY", "COVERAGE", "PREMIUM",
+            "PROTECTION", "HEALTH", "LIFE", "CAR", "HOME",
+            "CONTENTS", "TRAVEL"
+        ],
+        "chains": [
+            "AVIVA", "AXA", "DIRECT LINE", "ADMIRAL",
+            "COMPARETHEMARKET", "MONEYSUPERMARKET", "CONFUSED.COM",
+            "BUPA", "VITALITY"
+        ]
+    }
+} 
